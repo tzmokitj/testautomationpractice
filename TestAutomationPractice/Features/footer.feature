@@ -12,7 +12,7 @@ Scenario Outline: User can open links under information section
 		| Specials                    | Price drop                  |
 		| New products                | New products                |
 		| Best sellers                | Best sellers                |
-		| Our Stores                  | Our store(s)!               |
+		| Our stores                  | Our store(s)!               |
 		| Contact us                  | Contact                     |
 		| Terms and conditions of use | Terms and conditions of use |
 		| About us                    | About us                    |

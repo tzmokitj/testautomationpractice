@@ -11,7 +11,7 @@ namespace TestAutomationPractice.Pages
         readonly IWebDriver driver;
         public By homepage = By.Id("index");
         public By contactUs = By.Id("contact-link");
-        public By searchField = By.Id(search_query_top");
+        public By searchField = By.Id("search_query_top");
         public By searchBtn = By.Name("submit_search");
 
         public HomePage(IWebDriver driver)
