@@ -1,9 +1,12 @@
 ﻿Feature: MyAccount
-	Simple calculator for adding two numbers
+	In order to complete orders
+	As a user
+	I want to be able to log in
 
 @mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: User can log in
+	Given User clicks on Sign in option
+	And enters correct credentials
+	When clicks Sign in option
+	Then user will be logged in
+	
