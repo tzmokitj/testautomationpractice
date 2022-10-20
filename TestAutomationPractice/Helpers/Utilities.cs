@@ -59,6 +59,12 @@ namespace TestAutomationPractice.Helpers
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement)).Displayed;
         }
+        public bool TextPresentInElement2(string text)
+        {
+            By textElement = By.XPath("//*/td[2]/p/a");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement)).Displayed;
+        }
 
         public IList<IWebElement> ReturnCategoryList(string catName)
         {
@@ -68,4 +74,6 @@ namespace TestAutomationPractice.Helpers
         }
 
     }
+    
 }
+
