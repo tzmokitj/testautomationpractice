@@ -60,7 +60,7 @@ namespace TestAutomationPractice.Steps
         [Then(@"cart summary is displayed and product is added to cart")]
         public void ThenCartSummaryIsDisplayedAndProductIsAddedToCart()
         {
-           // PDPage pdp = new PDPage(Driver)
+           // PDPage pdp = new PDPage(Driver);
             CartSummaryPage csp = new CartSummaryPage(Driver);
             Assert.True(ut.TextPresentInElement2(productData.ProductName), "Item is not added to the cart");
         }
