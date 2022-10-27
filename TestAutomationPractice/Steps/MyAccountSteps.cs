@@ -59,7 +59,7 @@ namespace TestAutomationPractice.Steps
             SignUpPage sup = new SignUpPage(Driver);
             ut.EnterTextInElement(sup.firstName, TestConstants.FirstName);
             ut.EnterTextInElement(sup.lastName, TestConstants.LastName);
-            personData.FullName = TestConstants.FirstName  + " " + TestConstants.LastName;
+            personData.FullName = TestConstants.FirstName  + " " + ut.RandomString(7);
             ut.EnterTextInElement(sup.password, TestConstants.Password);
             ut.EnterTextInElement(sup.address, TestConstants.Address);
             ut.EnterTextInElement(sup.city, TestConstants.City);
@@ -77,12 +77,40 @@ namespace TestAutomationPractice.Steps
             ut.ClickOnElement(sup.registerBtn);
         }
 
-        [Then(@"user's full name is displayed")]
+        [StepDefinition(@"user's full name is displayed")]
         public void ThenUserSFullNameIsDisplayed()
         {
             
             Assert.True(ut.TextPresentInElement(personData.FullName),"User's full name is not displayed in the header");
         }
+        [When(@"user clicks on my personal information button")]
+        public void WhenUserClicksOnMyPersonalInformationButton()
+        {
+            MyAccountPage map = new MyAccountPage(Driver);
+            ut.ClickOnElement(map.myPersonalInformation);
+        }
+
+        [When(@"updates Last name,  current password field")]
+        public void WhenUpdatesLastNameCurrentPasswordField()
+        {
+            PInfoPage pip = new PInfoPage(Driver);
+            var lastName = ut.RandomString(7);
+            Driver.FindElement(pip.pInfoLastName).Clear();
+            personData.FullName = TestConstants.FirstName + " " + lastName;
+            ut.EnterTextInElement(pip.pInfoLastName,lastName);
+            ut.EnterTextInElement(pip.pInfoCurrentPassword, TestConstants.Password);
+        }
+
+        [When(@"clicks on Save button")]
+        public void WhenClicksOnSaveButton()
+        {
+            PInfoPage pip = new PInfoPage(Driver);
+            ut.ClickOnElement(pip.pInfoSaveBtn);
+            
+        }
+        
+
+
 
 
 

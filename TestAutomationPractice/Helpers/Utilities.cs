@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 
@@ -72,6 +73,13 @@ namespace TestAutomationPractice.Helpers
             IList<IWebElement> category = driver.FindElements(catOption);
             return category;
         }
+        public string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[RandomName.Next(s.Length)]).ToArray());
+        }
+
 
     }
     
